@@ -20,7 +20,7 @@ __pycache__/
 
 # Local app and database artifacts
 .cache/
-idobro_db/
+data/
 
 # Streamlit and notebook artifacts
 .streamlit/secrets.toml
@@ -35,3 +35,4 @@ Thumbs.db
 # Archives and generated exports
 *.zip
 draft_proposal.txt
+data/
