@@ -16,7 +16,12 @@ client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
 CACHE_FILE = ".cache/uploaded_doc_embeddings.json"
 
 # ── ChromaDB ───────────────────────────────────────────
-def load_collection(db_path="./idobro_db"):
+import os
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+def load_collection(db_path=None):
+    if db_path is None:
+        db_path = os.path.join(BASE_DIR, "idobro_db")
     chroma_client = chromadb.PersistentClient(path=db_path)
     return chroma_client.get_or_create_collection(name="idobro_knowledge")
 

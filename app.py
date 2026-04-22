@@ -12,7 +12,8 @@ from prompts import fit_assessment_prompt, proposal_draft_prompt
 
 # ── Setup ──────────────────────────────────────────────
 client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
-collection = load_collection("./idobro_db")
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+collection = load_collection(os.path.join(BASE_DIR, "idobro_db"))
 
 MODEL = "gemini-2.5-flash"
 
